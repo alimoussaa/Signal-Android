@@ -336,6 +336,18 @@ public class MediaSendActivity extends PassphraseRequiredActivity implements Med
   }
 
   @Override
+  public boolean onKeyDown(int keyCode, KeyEvent event) {
+    if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN || keyCode == KeyEvent.KEYCODE_VOLUME_UP) && getIntent().getBooleanExtra(KEY_IS_CAMERA, false)) {
+      Fragment fragment = getOrCreateCameraFragment();
+      ((CameraFragment) fragment).onCaptureClicked();
+      return true;
+    }
+    else {
+      return super.onKeyDown(keyCode, event);
+    }
+  }
+
+  @Override
   public void onBackPressed() {
     MediaSendFragment sendFragment  = (MediaSendFragment) getSupportFragmentManager().findFragmentByTag(TAG_SEND);
 

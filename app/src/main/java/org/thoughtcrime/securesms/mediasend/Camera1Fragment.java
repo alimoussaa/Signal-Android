@@ -252,7 +252,7 @@ public class Camera1Fragment extends LoggingFragment implements CameraFragment,
     viewModel.onCameraControlsInitialized();
   }
 
-  private void onCaptureClicked() {
+  public void onCaptureClicked() {
     orderEnforcer.reset();
 
     Stopwatch fastCaptureTimer = new Stopwatch("Capture");

@@ -330,7 +330,7 @@ public class CameraXFragment extends LoggingFragment implements CameraFragment {
     });
   }
 
-  private void onCaptureClicked() {
+  public void onCaptureClicked() {
     Stopwatch stopwatch = new Stopwatch("Capture");
 
     CameraXSelfieFlashHelper flashHelper = new CameraXSelfieFlashHelper(

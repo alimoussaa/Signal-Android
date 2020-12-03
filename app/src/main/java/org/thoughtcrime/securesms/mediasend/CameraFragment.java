@@ -38,4 +38,6 @@ public interface CameraFragment {
     int getDisplayRotation();
     void onCameraCountButtonClicked();
   }
+
+  void onCaptureClicked();
 }
